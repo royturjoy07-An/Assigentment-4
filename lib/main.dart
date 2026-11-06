@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:turjoy1069/container_page.dart';
-import 'package:turjoy1069/home_page.dart';
+import 'package:turjoy1069/loginreg.dart';
+import 'package:turjoy1069/logreg.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      home: ContainerPage(),
+      home: Logreg(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:turjoy1069/container_page.dart' show ContainerPage;
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -36,6 +37,10 @@ class HomePage extends StatelessWidget {
               title: const Text("Homepage"),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
               },
             ),
 
@@ -47,6 +52,10 @@ class HomePage extends StatelessWidget {
               hoverColor: Colors.blue.shade100,
               onTap: () {
                 Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ContainerPage()),
+                );
               },
             ),
 
@@ -132,8 +141,9 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("You selected Blue!")),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ContainerPage()),
                   );
                 },
                 style: TextButton.styleFrom(
@@ -146,14 +156,17 @@ class HomePage extends StatelessWidget {
                   elevation: 5,
                   fixedSize: const Size(150, 50),
                 ),
-                child: const Text("Blue"),
+                child: const Text("Container Page"),
               ),
             ),
 
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("You selected Green!")),
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ContainerPage(),
+                  ),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -161,7 +174,7 @@ class HomePage extends StatelessWidget {
                 foregroundColor: const Color.fromARGB(255, 255, 255, 255),
                 fixedSize: const Size(150, 50),
               ),
-              child: const Text("Green"),
+              child: const Text("Go to Container Page "),
             ),
 
             const SizedBox(height: 8),
